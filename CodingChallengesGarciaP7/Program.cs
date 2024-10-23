@@ -13,11 +13,11 @@ class Challenges
     public static void Start() 
     {
         //Welcome to the user of my program
-        Console.WriteLine("Please choose a function \nTo see a list of all functions, please type 'list'");
+        Console.WriteLine("Please choose a function \nTo see a list of all functions, please type 'list'\nTo exit the program, please type 'End'");
         var response = Console.ReadLine();
         if (response == "list")
         {
-            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity");
+            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100");
             Start();
         }
         else if (response == "Sum")
@@ -60,7 +60,7 @@ class Challenges
             Console.WriteLine("We are going to the year to day converter called 'CalcAge.' \nPlease give me the years");
             var years = Console.ReadLine();
             var yearsInt = int.Parse(years);
-            Console.WriteLine(years +" years converted to days is " + CalcAge(yearsInt) + ".");
+            Console.WriteLine(years + " years converted to days is " + CalcAge(yearsInt) + ".");
         }
         else if (response == "triArea")
         {
@@ -79,9 +79,33 @@ class Challenges
             float numberToUse1 = float.Parse(number1);
             Console.WriteLine(lessThanOrEqualToZero(numberToUse1));
         }
+        else if (response == "lessThan100")
+        {
+            Console.WriteLine("Today we are going to use the sum value checker called 'lessThan100'\nPlease give me the first number to add.");
+            var number1 = Console.ReadLine();
+            float numberToUse1 = float.Parse(number1);
+            Console.WriteLine("Now give me the second number to add.");
+            var number2 = Console.ReadLine();
+            float numberToUse2 = float.Parse(number2);
+            Console.WriteLine(lessThan100(numberToUse1, numberToUse2));
+            if (lessThan100(numberToUse1, numberToUse2))
+            {
+                Console.WriteLine((numberToUse1 + numberToUse2) + " is less than 100.");
+            }
+            else
+            {
+                Console.WriteLine((numberToUse1 + numberToUse2) + " is greater than 100.");
+            }
+
+        }
+        else if (response == "End")
+        {
+            return;
+        }
         else
         {
             Console.WriteLine("That is not a valid function.");
+
         }
         
         Start();
@@ -129,5 +153,18 @@ class Challenges
         {
             return true;
         }
+    }
+
+    public static bool lessThan100(float first, float second)
+    {
+        if (first + second < 100)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 }
