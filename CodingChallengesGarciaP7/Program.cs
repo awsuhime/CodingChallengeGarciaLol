@@ -98,6 +98,25 @@ class Challenges
             }
 
         }
+        else if (response == "isEqual")
+        {
+            Console.WriteLine("Today we are going to use the equality checker called 'isEqual.' \nPlease give me a number.");
+            var number1 = Console.ReadLine();
+            int numberToUse1 = int.Parse(number1);
+            Console.WriteLine("Now please give me another number");
+            var number2 = Console.ReadLine();
+            int numberToUse2 = int.Parse((number2));
+            Console.WriteLine(isEqual(numberToUse1, numberToUse2));
+            if (isEqual(numberToUse1, numberToUse2))
+            {
+                Console.WriteLine(number1 + " and " + number2 + " are equal.");
+            }
+            else
+            {
+                Console.WriteLine(number1 + " and " + number2 + " are not equal.");
+
+            }
+        }
         else if (response == "End")
         {
             return;
@@ -166,5 +185,17 @@ class Challenges
             return false;
         }
         
+    }
+
+    public static bool isEqual(int one, int two)
+    {
+        if (one == two)
+        {
+            return true;
+        }
+        else       
+        {
+            return false;
+        }
     }
 }
