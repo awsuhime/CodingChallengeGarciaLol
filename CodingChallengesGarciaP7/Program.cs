@@ -17,7 +17,7 @@ class Challenges
         var response = Console.ReadLine();
         if (response == "list")
         {
-            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100");
+            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething");
             Start();
         }
         else if (response == "Sum")
@@ -117,6 +117,13 @@ class Challenges
 
             }
         }
+        else if (response == "something")
+        {
+            Console.WriteLine("Today we are going to use the something called 'something.' \nPlease say something.");
+            string responseH = Console.ReadLine();
+            
+            Console.WriteLine(something(responseH));
+        }
         else if (response == "End")
         {
             return;
@@ -197,5 +204,10 @@ class Challenges
         {
             return false;
         }
+    }
+
+    public static string something(string input)
+    {
+        return ("something " + input);
     }
 }
