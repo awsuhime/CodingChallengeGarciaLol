@@ -130,10 +130,6 @@ class Challenges
             var responseh = Console.ReadLine();
             bool responseToUse = bool.Parse(responseh);
             Console.WriteLine("The opposite of " + responseh + " is " + Reverse(responseToUse) + ".");
-            
-                
-
-            
         }
         else if (response == "End")
         {
@@ -224,14 +220,8 @@ class Challenges
 
     public static bool Reverse(bool input)
     {
-        if (input == true)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return !input;
+       
         
     }
 }
