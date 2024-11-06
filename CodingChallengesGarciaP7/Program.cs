@@ -17,7 +17,7 @@ class Challenges
         var response = Console.ReadLine();
         if (response == "list")
         {
-            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething");
+            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse");
             Start();
         }
         else if (response == "Sum")
@@ -124,6 +124,17 @@ class Challenges
             
             Console.WriteLine(something(responseH));
         }
+        else if (response == "Reverse")
+        {
+            Console.WriteLine("Today we are going to use the reverser. \nPlease choose either 'true' or 'false.'");
+            var responseh = Console.ReadLine();
+            bool responseToUse = bool.Parse(responseh);
+            Console.WriteLine("The opposite of " + responseh + " is " + Reverse(responseToUse) + ".");
+            
+                
+
+            
+        }
         else if (response == "End")
         {
             return;
@@ -209,5 +220,18 @@ class Challenges
     public static string something(string input)
     {
         return ("something " + input);
+    }
+
+    public static bool Reverse(bool input)
+    {
+        if (input == true)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        
     }
 }
