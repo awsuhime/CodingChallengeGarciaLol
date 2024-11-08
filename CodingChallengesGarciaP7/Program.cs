@@ -17,7 +17,8 @@ class Challenges
         var response = Console.ReadLine();
         if (response == "list")
         {
-            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse");
+            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse" +
+                "\nhowManySeconds");
             Start();
         }
         else if (response == "Sum")
@@ -131,6 +132,13 @@ class Challenges
             bool responseToUse = bool.Parse(responseh);
             Console.WriteLine("The opposite of " + responseh + " is " + Reverse(responseToUse) + ".");
         }
+        else if (response == "howManySeconds")
+        {
+            Console.WriteLine("Today we are going to use the hour to second converter called 'howManySeconds.' Please give me the number of hours.");
+            var hours = Console.ReadLine();
+            float hoursToUse = float.Parse(hours);
+            Console.WriteLine(hours + " hours is equal to " + howManySeconds(hoursToUse) + " seconds.");
+        }
         else if (response == "End")
         {
             return;
@@ -223,5 +231,10 @@ class Challenges
         return !input;
        
         
+    }
+
+    public static float howManySeconds(float hours)
+    {
+        return hours * 3600;
     }
 }
