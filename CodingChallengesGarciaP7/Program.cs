@@ -18,7 +18,7 @@ class Challenges
         if (response == "list")
         {
             Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse" +
-                "\nhowManySeconds");
+                "\nhowManySeconds\nSumPolygon");
             Start();
         }
         else if (response == "Sum")
@@ -134,10 +134,38 @@ class Challenges
         }
         else if (response == "howManySeconds")
         {
-            Console.WriteLine("Today we are going to use the hour to second converter called 'howManySeconds.' Please give me the number of hours.");
+            Console.WriteLine("Today we are going to use the hour to second converter called 'howManySeconds.'\nPlease give me the number of hours.");
             var hours = Console.ReadLine();
             float hoursToUse = float.Parse(hours);
             Console.WriteLine(hours + " hours is equal to " + howManySeconds(hoursToUse) + " seconds.");
+        }
+        else if (response == "SumPolygon")
+        {
+            Console.WriteLine("Today we are going to use the sum of internal angle calculator called 'SumPolygon.'\nPlease give me the number of sides the polygon has.");
+            bool validNumber = false;
+            while (!validNumber)
+            {
+                var Inputsides = Console.ReadLine();
+                if (int.TryParse(Inputsides, out _))
+                {
+                    int sides = int.Parse(Inputsides);
+                    if (sides < 3)
+                    {
+                        Console.WriteLine("A polygon can't have " + Inputsides + " sides.\nPlease give me a polygon.");
+                    }
+                    else
+                    {
+                        validNumber = true;
+                        Console.WriteLine("The sum of all internal angles of a polygon with " + Inputsides + " sides is " + SumPolygon(sides) + " degrees.");
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("That isn't a valid input.");
+                }
+            }
+            
         }
         else if (response == "End")
         {
@@ -236,5 +264,10 @@ class Challenges
     public static float howManySeconds(float hours)
     {
         return hours * 3600;
+    }
+
+    public static int SumPolygon(int sides)
+    {
+        return (sides - 2) * 180;
     }
 }
