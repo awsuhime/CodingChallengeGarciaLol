@@ -18,7 +18,7 @@ class Challenges
         if (response == "list")
         {
             Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse" +
-                "\nhowManySeconds\nSumPolygon");
+                "\nhowManySeconds\nSumPolygon\nEdabit");
             Start();
         }
         else if (response == "Sum")
@@ -167,6 +167,14 @@ class Challenges
             }
             
         }
+        else if (response == "Edabit")
+        {
+            Console.WriteLine("Today we are going to use the Edabit thing called 'Edabit.' \nPlease say something.");
+            string name = Console.ReadLine();
+            Console.WriteLine(Edabit(name));
+
+
+        }
         else if (response == "End")
         {
             return;
@@ -269,5 +277,10 @@ class Challenges
     public static int SumPolygon(int sides)
     {
         return (sides - 2) * 180;
+    }
+
+    public static string Edabit(string input)
+    {
+        return input + "Edabit";
     }
 }
