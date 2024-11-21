@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net.WebSockets;
 class Challenges
 {
@@ -18,7 +19,7 @@ class Challenges
         if (response == "list")
         {
             Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse" +
-                "\nhowManySeconds\nSumPolygon\nEdabit");
+                "\nhowManySeconds\nSumPolygon\nEdabit\nAnd");
             Start();
         }
         else if (response == "Sum")
@@ -175,6 +176,46 @@ class Challenges
 
 
         }
+        else if (response == "And")
+        {
+            Console.WriteLine("Today we are going to use the and gate called 'And.' \nFor the first input, please say either true or false.");
+            bool valid = false;
+            bool one = false;
+            bool two = false;
+            while (!valid)
+            {
+                var response1 = Console.ReadLine();
+                if (bool.TryParse(response1, out _))
+                {
+                    one = bool.Parse(response1);
+                    valid = true;
+
+                }
+                else
+                {
+                    Console.WriteLine("Please type either true or false.");
+                }
+            }
+            Console.WriteLine("For the second input, please say either true or false."); 
+            bool valid2 = false;
+            while (!valid2)
+            {
+                var response2 = Console.ReadLine();
+                if (bool.TryParse(response2, out _))
+                {
+                    two = bool.Parse(response2);
+                    valid2 = true;
+
+                }
+                else
+                {
+                    Console.WriteLine("Please type either true or false.");
+                }
+            }
+            Console.WriteLine("And(" + one + ", " + two + ") -> " + And(one,two));
+
+        }
+        
         else if (response == "End")
         {
             return;
@@ -184,7 +225,7 @@ class Challenges
             Console.WriteLine("That is not a valid function.");
 
         }
-        
+
         Start();
     }
 
@@ -282,5 +323,18 @@ class Challenges
     public static string Edabit(string input)
     {
         return input + "Edabit";
+    }
+
+    public static bool And(bool one, bool two)
+    {
+        if (one && two)
+        {
+            return true;
+
+        }
+        else
+        {
+            return false;
+        }
     }
 }
