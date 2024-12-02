@@ -19,7 +19,7 @@ class Challenges
         if (response == "list")
         {
             Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse" +
-                "\nhowManySeconds\nSumPolygon\nEdabit\nAnd");
+                "\nhowManySeconds\nSumPolygon\nEdabit\nAnd\npoints");
             Start();
         }
         else if (response == "Sum")
@@ -215,7 +215,18 @@ class Challenges
             Console.WriteLine("And(" + one + ", " + two + ") -> " + And(one,two));
 
         }
-        
+
+        else if (response == "points")
+        {
+            Console.WriteLine("Today we are going to use the point counter called 'points.' \nFirst, please give me the number of 2 pointers scored.");
+            var twoP = Console.ReadLine();
+            int twoPI = int.Parse(twoP);
+            Console.WriteLine("Now, please give me the number of 3 pointers scored.");
+            var threeP = Console.ReadLine();
+            int threePI = int.Parse(threeP);
+            Console.WriteLine("points(" + twoPI + ", " + threePI + ") -> " + points(twoPI, threePI));
+        }
+
         else if (response == "End")
         {
             return;
@@ -336,5 +347,10 @@ class Challenges
         {
             return false;
         }
+    }
+
+    public static int points(int two, int three)
+    {
+        return two * 2 + three * 3;
     }
 }
