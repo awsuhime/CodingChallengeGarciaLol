@@ -14,135 +14,135 @@ class Challenges
     public static void Start() 
     {
         //Welcome to the user of my program
-        Console.WriteLine("Please choose a function \nTo see a list of all functions, please type 'list'\nTo exit the program, please type 'End'");
+        Console.WriteLine("    __Please choose a function__ \n    -To see a list of all functions, please type 'list'\n    -To exit the program, please type 'End'");
         var response = Console.ReadLine();
         if (response == "list")
         {
-            Console.WriteLine("Sum\nConvert\nPlusOne\nCircuitPower\nCalcAge\ntriArea\nnegativity\nlessThan100\nsomething\nReverse" +
-                "\nhowManySeconds\nSumPolygon\nEdabit\nAnd\npoints");
+            Console.WriteLine(" Sum\n Convert\n PlusOne\n CircuitPower\n CalcAge\n triArea\n negativity\n lessThan100\n something\n Reverse" +
+                "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName");
             Start();
         }
         else if (response == "Sum")
         {
-            Console.WriteLine("We are going to use number adder today called 'Sum.' Please give me the first number.");
+            Console.WriteLine(" We are going to use number adder today called 'Sum.' Please give me the first number.");
             var number1 = Console.ReadLine();
             int numberToUse1 = int.Parse(number1);
-            Console.WriteLine("Please give me the second number.");
+            Console.WriteLine(" Please give me the second number.");
             var number2 = Console.ReadLine();
             int numberToUse2 = int.Parse(number2);
-            Console.WriteLine("The sum of the number " + number1 + " and " + number2 + " is " + Sum(numberToUse1, numberToUse2) + ".");
+            Console.WriteLine(" The sum of the number " + number1 + " and " + number2 + " is " + Sum(numberToUse1, numberToUse2) + ".");
         }
         else if (response == "Convert")
         {
-            Console.WriteLine("We are going to use the minute to second convertor today called 'Convert.' \nPlease give me a number of minutes to convert to seconds.");
+            Console.WriteLine(" We are going to use the minute to second convertor today called 'Convert.' \n Please give me a number of minutes to convert to seconds.");
             var number1 = Console.ReadLine();
             int numberToUse1 = int.Parse(number1);
-            Console.WriteLine(number1 + " minutes is equivalent to " + Convert(numberToUse1) + " seconds.");
+            Console.WriteLine(" " + number1 + " minutes is equivalent to " + Convert(numberToUse1) + " seconds.");
         }
         else if (response == "PlusOne")
         {
-            Console.WriteLine("We are going to use the number incrementer today called 'PlusOne.' \nPlease give me a number to increment.");
+            Console.WriteLine(" We are going to use the number incrementer today called 'PlusOne.' \n Please give me a number to increment.");
             var number1 = Console.ReadLine();
             int numberToUse1 = int.Parse(number1);
-            Console.WriteLine(number1 + " + 1 = " + PlusOne(numberToUse1) + ".");
+            Console.WriteLine(" " + number1 + " + 1 = " + PlusOne(numberToUse1) + ".");
 
         }
         else if (response == "CircuitPower")
         {
-            Console.WriteLine("We are going to use the power calculator called 'CircuitPower.' \nPlease give me the voltage.");
+            Console.WriteLine(" We are going to use the power calculator called 'CircuitPower.' \n Please give me the voltage.");
             var voltage = Console.ReadLine();
             int voltageInt = int.Parse(voltage);
-            Console.WriteLine("Now please give me the current.");
+            Console.WriteLine(" Now please give me the current.");
             var current = Console.ReadLine();
             int currentInt = int.Parse(current);
-            Console.WriteLine("With the voltage of " + voltage + " and the current of " + current + ", the circuit power will be " + CircuitPower(voltageInt, currentInt) + ".");
+            Console.WriteLine(" With the voltage of " + voltage + " and the current of " + current + ", the circuit power will be " + CircuitPower(voltageInt, currentInt) + ".");
         }
         else if (response == "CalcAge")
         {
-            Console.WriteLine("We are going to the year to day converter called 'CalcAge.' \nPlease give me the years");
+            Console.WriteLine(" We are going to the year to day converter called 'CalcAge.' \nPlease give me the years");
             var years = Console.ReadLine();
             var yearsInt = int.Parse(years);
-            Console.WriteLine(years + " years converted to days is " + CalcAge(yearsInt) + ".");
+            Console.WriteLine(" " + years + " years converted to days is " + CalcAge(yearsInt) + ".");
         }
         else if (response == "triArea")
         {
-            Console.WriteLine("We are going to use the triangle are calculator called 'triArea.' Please give me the base.");
+            Console.WriteLine(" We are going to use the triangle are calculator called 'triArea.' Please give me the base.");
             var number1 = Console.ReadLine();
             float numberToUse1 = float.Parse(number1);
-            Console.WriteLine("Please give me the height.");
+            Console.WriteLine(" Please give me the height.");
             var number2 = Console.ReadLine();
             float numberToUse2 = float.Parse(number2);
-            Console.WriteLine("The area of a triangle with the base " + number1 + " and height " + number2 + " is " + triArea(numberToUse1, numberToUse2) + ".");
+            Console.WriteLine(" The area of a triangle with the base " + number1 + " and height " + number2 + " is " + triArea(numberToUse1, numberToUse2) + ".");
         }
         else if (response == "negativity")
         {
-            Console.WriteLine("Today we are going to use the negativity checker called 'negativity.' \nKeep in mind the function will return true even if the number is 0, which is neither.");
+            Console.WriteLine(" Today we are going to use the negativity checker called 'negativity.' \n Keep in mind the function will return true even if the number is 0, which is neither.");
             var number1 = Console.ReadLine();
             float numberToUse1 = float.Parse(number1);
             Console.WriteLine(lessThanOrEqualToZero(numberToUse1));
         }
         else if (response == "lessThan100")
         {
-            Console.WriteLine("Today we are going to use the sum value checker called 'lessThan100'\nPlease give me the first number to add.");
+            Console.WriteLine(" Today we are going to use the sum value checker called 'lessThan100'\n Please give me the first number to add.");
             var number1 = Console.ReadLine();
             float numberToUse1 = float.Parse(number1);
-            Console.WriteLine("Now give me the second number to add.");
+            Console.WriteLine(" Now give me the second number to add.");
             var number2 = Console.ReadLine();
             float numberToUse2 = float.Parse(number2);
             Console.WriteLine(lessThan100(numberToUse1, numberToUse2));
             if (lessThan100(numberToUse1, numberToUse2))
             {
-                Console.WriteLine((numberToUse1 + numberToUse2) + " is less than 100.");
+                Console.WriteLine( " " + (numberToUse1 + numberToUse2) + " is less than 100.");
             }
             else
             {
-                Console.WriteLine((numberToUse1 + numberToUse2) + " is greater than 100.");
+                Console.WriteLine( " " + (numberToUse1 + numberToUse2) + " is greater than 100.");
             }
 
         }
         else if (response == "isEqual")
         {
-            Console.WriteLine("Today we are going to use the equality checker called 'isEqual.' \nPlease give me a number.");
+            Console.WriteLine(" Today we are going to use the equality checker called 'isEqual.' \n  Please give me a number.");
             var number1 = Console.ReadLine();
             int numberToUse1 = int.Parse(number1);
-            Console.WriteLine("Now please give me another number");
+            Console.WriteLine(" Now please give me another number");
             var number2 = Console.ReadLine();
             int numberToUse2 = int.Parse((number2));
             Console.WriteLine(isEqual(numberToUse1, numberToUse2));
             if (isEqual(numberToUse1, numberToUse2))
             {
-                Console.WriteLine(number1 + " and " + number2 + " are equal.");
+                Console.WriteLine(" " + number1 + " and " + number2 + " are equal.");
             }
             else
             {
-                Console.WriteLine(number1 + " and " + number2 + " are not equal.");
+                Console.WriteLine(" " + number1 + " and " + number2 + " are not equal.");
 
             }
         }
         else if (response == "something")
         {
-            Console.WriteLine("Today we are going to use the something called 'something.' \nPlease say something.");
+            Console.WriteLine(" Today we are going to use the something called 'something.' \n Please say something.");
             string responseH = Console.ReadLine();
             
             Console.WriteLine(something(responseH));
         }
         else if (response == "Reverse")
         {
-            Console.WriteLine("Today we are going to use the reverser. \nPlease choose either 'true' or 'false.'");
+            Console.WriteLine(" Today we are going to use the reverser. \n Please choose either 'true' or 'false.'");
             var responseh = Console.ReadLine();
             bool responseToUse = bool.Parse(responseh);
-            Console.WriteLine("The opposite of " + responseh + " is " + Reverse(responseToUse) + ".");
+            Console.WriteLine(" The opposite of " + responseh + " is " + Reverse(responseToUse) + ".");
         }
         else if (response == "howManySeconds")
         {
-            Console.WriteLine("Today we are going to use the hour to second converter called 'howManySeconds.'\nPlease give me the number of hours.");
+            Console.WriteLine("Today we are going to use the hour to second converter called 'howManySeconds.'\n Please give me the number of hours.");
             var hours = Console.ReadLine();
             float hoursToUse = float.Parse(hours);
-            Console.WriteLine(hours + " hours is equal to " + howManySeconds(hoursToUse) + " seconds.");
+            Console.WriteLine( " " + hours + " hours is equal to " + howManySeconds(hoursToUse) + " seconds.");
         }
         else if (response == "SumPolygon")
         {
-            Console.WriteLine("Today we are going to use the sum of internal angle calculator called 'SumPolygon.'\nPlease give me the number of sides the polygon has.");
+            Console.WriteLine(" Today we are going to use the sum of internal angle calculator called 'SumPolygon.'\n Please give me the number of sides the polygon has.");
             bool validNumber = false;
             while (!validNumber)
             {
@@ -152,25 +152,25 @@ class Challenges
                     int sides = int.Parse(Inputsides);
                     if (sides < 3)
                     {
-                        Console.WriteLine("A polygon can't have " + Inputsides + " sides.\nPlease give me a polygon.");
+                        Console.WriteLine(" A polygon can't have " + Inputsides + " sides.\n Please give me a polygon.");
                     }
                     else
                     {
                         validNumber = true;
-                        Console.WriteLine("The sum of all internal angles of a polygon with " + Inputsides + " sides is " + SumPolygon(sides) + " degrees.");
+                        Console.WriteLine(" The sum of all internal angles of a polygon with " + Inputsides + " sides is " + SumPolygon(sides) + " degrees.");
 
                     }
                 }
                 else
                 {
-                    Console.WriteLine("That isn't a valid input.");
+                    Console.WriteLine(" That isn't a valid input.");
                 }
             }
             
         }
         else if (response == "Edabit")
         {
-            Console.WriteLine("Today we are going to use the Edabit thing called 'Edabit.' \nPlease say something.");
+            Console.WriteLine(" Today we are going to use the Edabit thing called 'Edabit.' \n Please say something.");
             string name = Console.ReadLine();
             Console.WriteLine(Edabit(name));
 
@@ -178,7 +178,7 @@ class Challenges
         }
         else if (response == "And")
         {
-            Console.WriteLine("Today we are going to use the and gate called 'And.' \nFor the first input, please say either true or false.");
+            Console.WriteLine(" Today we are going to use the and gate called 'And.' \n For the first input, please say either true or false.");
             bool valid = false;
             bool one = false;
             bool two = false;
@@ -193,10 +193,10 @@ class Challenges
                 }
                 else
                 {
-                    Console.WriteLine("Please type either true or false.");
+                    Console.WriteLine(" Please type either true or false.");
                 }
             }
-            Console.WriteLine("For the second input, please say either true or false."); 
+            Console.WriteLine(" For the second input, please say either true or false."); 
             bool valid2 = false;
             while (!valid2)
             {
@@ -209,22 +209,40 @@ class Challenges
                 }
                 else
                 {
-                    Console.WriteLine("Please type either true or false.");
+                    Console.WriteLine(" Please type either true or false.");
                 }
             }
-            Console.WriteLine("And(" + one + ", " + two + ") -> " + And(one,two));
+            Console.WriteLine(" And(" + one + ", " + two + ") -> " + And(one,two));
 
         }
 
         else if (response == "points")
         {
-            Console.WriteLine("Today we are going to use the point counter called 'points.' \nFirst, please give me the number of 2 pointers scored.");
+            Console.WriteLine(" Today we are going to use the point counter called 'points.' \n First, please give me the number of 2 pointers scored.");
             var twoP = Console.ReadLine();
             int twoPI = int.Parse(twoP);
-            Console.WriteLine("Now, please give me the number of 3 pointers scored.");
+            Console.WriteLine(" Now, please give me the number of 3 pointers scored.");
             var threeP = Console.ReadLine();
             int threePI = int.Parse(threeP);
-            Console.WriteLine("points(" + twoPI + ", " + threePI + ") -> " + points(twoPI, threePI));
+            Console.WriteLine(" points(" + twoPI + ", " + threePI + ") -> " + points(twoPI, threePI));
+        }
+        else if(response == "FindPerimeter")
+        {
+            Console.WriteLine(" Today we are going to use the perimeter calculator called 'FindPerimeter.' \n First, please give me the length of the rectangle.");
+            var lengthP = Console.ReadLine();
+            float lengthPF = float.Parse(lengthP);
+            Console.WriteLine(" Now please give me the width of the rectangle.");
+            var widthP = Console.ReadLine();
+            float widthPF = float.Parse(widthP);
+            Console.WriteLine(" FindPerimeter(" + lengthP + ", " + widthP + ") -> " + FindPerimeter(lengthPF, widthPF)) ;
+
+
+        }
+        else if (response == "HelloName")
+        {
+            Console.WriteLine(" Today we are going to use the greet machine called 'HelloName.' \n Please give me your name.");
+            string name = Console.ReadLine();
+            Console.WriteLine(HelloName(name));
         }
 
         else if (response == "End")
@@ -233,7 +251,7 @@ class Challenges
         }
         else
         {
-            Console.WriteLine("That is not a valid function.");
+            Console.WriteLine(" That is not a valid function.");
 
         }
 
@@ -311,7 +329,7 @@ class Challenges
 
     public static string something(string input)
     {
-        return ("something " + input);
+        return (" something " + input);
     }
 
     public static bool Reverse(bool input)
@@ -333,7 +351,7 @@ class Challenges
 
     public static string Edabit(string input)
     {
-        return input + "Edabit";
+        return  " " + input + "Edabit";
     }
 
     public static bool And(bool one, bool two)
@@ -352,5 +370,15 @@ class Challenges
     public static int points(int two, int three)
     {
         return two * 2 + three * 3;
+    }
+
+    public static float FindPerimeter(float length, float width)
+    {
+        return (length + width) * 2;
+    }
+
+    public static string HelloName(string input)
+    {
+        return " Hello " + input + "!";
     }
 }
