@@ -19,7 +19,7 @@ class Challenges
         if (response == "list")
         {
             Console.WriteLine(" Sum\n Convert\n PlusOne\n CircuitPower\n CalcAge\n triArea\n negativity\n lessThan100\n something\n Reverse" +
-                "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName");
+                "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals");
             Start();
         }
         else if (response == "Sum")
@@ -244,6 +244,85 @@ class Challenges
             string name = Console.ReadLine();
             Console.WriteLine(HelloName(name));
         }
+        else if (response == "animals")
+        {
+            Console.WriteLine(" Today we are going to use the leg counter called 'animals.' \n Please give me the number of chickens.");
+            int chick = 1;
+            int cow = 1;
+            int pig = 1;
+            bool valid1 = false;
+            while (!valid1)
+            {
+                var chickS = Console.ReadLine();
+                if (int.TryParse(chickS, out _))
+                {
+                    int chickT = int.Parse(chickS);
+                    if (chickT >= 0)
+                    {
+                        valid1 = true;
+                        chick = chickT;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please give me a positive number."); 
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("It's hard to find the legs on " + chickS + " of a chicken.");
+                }
+            }
+            Console.WriteLine("Now give me the number of cows.");
+            bool valid2 = false;
+            while (!valid2)
+            {
+                var cowS = Console.ReadLine();
+                if (int.TryParse(cowS, out _))
+                {
+                    int cowT = int.Parse(cowS);
+                    if (cowT >= 0)
+                    {
+                        valid2 = true;
+                        cow = cowT;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please give me a positive number.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("It's hard to find the legs on " + cowS + " of a cow.");
+                }
+            }
+            Console.WriteLine("Now give me the number of pigs.");
+            bool valid3 = false;
+            while (!valid3)
+            {
+                var pigS = Console.ReadLine();
+                if (int.TryParse(pigS, out _))
+                {
+                    int pigT = int.Parse(pigS);
+                    if (pigT >= 0)
+                    {
+                        valid3 = true;
+                        pig = pigT;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please give me a positive number.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("It's hard to find the legs on " + pigS + " of a pig.");
+                }
+            }
+
+            
+            Console.WriteLine(" In total, there are " + animals(chick, cow, pig) + " legs.");
+
+        }
 
         else if (response == "End")
         {
@@ -380,5 +459,10 @@ class Challenges
     public static string HelloName(string input)
     {
         return " Hello " + input + "!";
+    }
+
+    public static int animals(int chicks, int cows, int pigs)
+    {
+        return chicks * 2 + cows * 4 + pigs * 4;
     }
 }
