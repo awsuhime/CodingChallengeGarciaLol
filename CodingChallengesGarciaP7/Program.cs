@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net.WebSockets;
+using System.Runtime.InteropServices;
 class Challenges
 {
     //Start()
@@ -21,8 +22,12 @@ class Challenges
         if (response == "list")
         {
             Console.WriteLine(" Sum\n Convert\n PlusOne\n CircuitPower\n CalcAge\n triArea\n negativity\n lessThan100\n something\n Reverse" +
+<<<<<<< HEAD
                 "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals \n MonthName \n FindMinMax" +
                 "\n getAbsSum \n CalculateExponent");
+=======
+                "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals \n FootballPoints");
+>>>>>>> c30cabaf6bc10cb6e4192caca85b86bb0acb38b1
             Start();
         }
         else if (response == "Sum")
@@ -326,11 +331,20 @@ class Challenges
             Console.WriteLine(" In total, there are " + animals(chick, cow, pig) + " legs.");
 
         }
+<<<<<<< HEAD
         else if (response == "MonthName")
         {
             Console.WriteLine(" Today we are going to use the calendar called 'MonthName' \n First, please give me a number from 1 to 12.");
             int monthInt = 1;
             
+=======
+        else if (response == "FootballPoints")
+        {
+            Console.WriteLine(" Today we are going to use the football point calculator called 'FootballPoints' \n Please give me the number of wins.");
+            int win = 1;
+            int draw = 1;
+            int loss = 1;
+>>>>>>> c30cabaf6bc10cb6e4192caca85b86bb0acb38b1
             bool valid1 = false;
             while (!valid1)
             {
@@ -338,6 +352,7 @@ class Challenges
                 if (int.TryParse(chickS, out _))
                 {
                     int chickT = int.Parse(chickS);
+<<<<<<< HEAD
                     if (chickT > 0 && chickT <= 12)
                     {
                         valid1 = true;
@@ -346,14 +361,83 @@ class Challenges
                     else
                     {
                         Console.WriteLine(" Please give me a number from 1 to 12.");
+=======
+                    if (chickT >= 0)
+                    {
+                        valid1 = true;
+                        win = chickT;
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Please give me a positive number.");
+>>>>>>> c30cabaf6bc10cb6e4192caca85b86bb0acb38b1
                     }
                 }
                 else
                 {
+<<<<<<< HEAD
                     Console.WriteLine(" Please give me a number from 1 to 12.");
                 }
             }
             Console.WriteLine(" Challenge 1 MonthName(" + monthInt + ") is: " + MonthName(monthInt) );
+=======
+                    Console.WriteLine(" Please give me a full number.");
+                    
+                }
+            }
+            Console.WriteLine(" Now give me the number of draws.");
+            bool valid2 = false;
+            while (!valid2)
+            {
+                var cowS = Console.ReadLine();
+                if (int.TryParse(cowS, out _))
+                {
+                    int cowT = int.Parse(cowS);
+                    if (cowT >= 0)
+                    {
+                        valid2 = true;
+                        draw = cowT;
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Please give me a positive number.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a full number.");
+
+                }
+            }
+            Console.WriteLine(" Now give me the number of losses.");
+            bool valid3 = false;
+            while (!valid3)
+            {
+                var pigS = Console.ReadLine();
+                if (int.TryParse(pigS, out _))
+                {
+                    int pigT = int.Parse(pigS);
+                    if (pigT >= 0)
+                    {
+                        valid3 = true;
+                        loss = pigT;
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Please give me a positive number.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a full number.");
+
+                }
+            }
+
+            Console.WriteLine(" FootballPoints(" + win + ", " + draw + ", " + loss + ") -> " + FootballPoints(win, draw, loss));
+        }
+            
+>>>>>>> c30cabaf6bc10cb6e4192caca85b86bb0acb38b1
 
         }
         else if (response == "FindMinMax")
@@ -645,6 +729,7 @@ class Challenges
         return chicks * 2 + cows * 4 + pigs * 4;
     }
 
+<<<<<<< HEAD
     public static string MonthName(int M)
     {
         return DateAndTime.MonthName(M);
@@ -696,5 +781,10 @@ class Challenges
     {
         return MathF.Pow(baseH, exp);
         
+=======
+    public static int FootballPoints(int wins, int draws, int losses)
+    {
+        return wins * 3 + draws;
+>>>>>>> c30cabaf6bc10cb6e4192caca85b86bb0acb38b1
     }
 }
