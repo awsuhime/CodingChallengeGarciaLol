@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net.WebSockets;
 class Challenges
@@ -19,7 +21,8 @@ class Challenges
         if (response == "list")
         {
             Console.WriteLine(" Sum\n Convert\n PlusOne\n CircuitPower\n CalcAge\n triArea\n negativity\n lessThan100\n something\n Reverse" +
-                "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals");
+                "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals \n MonthName \n FindMinMax" +
+                "\n getAbsSum \n CalculateExponent");
             Start();
         }
         else if (response == "Sum")
@@ -264,15 +267,15 @@ class Challenges
                     }
                     else
                     {
-                        Console.WriteLine("Please give me a positive number."); 
+                        Console.WriteLine(" Please give me a positive number."); 
                     }
                 }
                 else
                 {
-                    Console.WriteLine("It's hard to find the legs on " + chickS + " of a chicken.");
+                    Console.WriteLine(" It's hard to find the legs on " + chickS + " of a chicken.");
                 }
             }
-            Console.WriteLine("Now give me the number of cows.");
+            Console.WriteLine(" Now give me the number of cows.");
             bool valid2 = false;
             while (!valid2)
             {
@@ -287,15 +290,15 @@ class Challenges
                     }
                     else
                     {
-                        Console.WriteLine("Please give me a positive number.");
+                        Console.WriteLine(" Please give me a positive number.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("It's hard to find the legs on " + cowS + " of a cow.");
+                    Console.WriteLine(" It's hard to find the legs on " + cowS + " of a cow.");
                 }
             }
-            Console.WriteLine("Now give me the number of pigs.");
+            Console.WriteLine(" Now give me the number of pigs.");
             bool valid3 = false;
             while (!valid3)
             {
@@ -310,12 +313,12 @@ class Challenges
                     }
                     else
                     {
-                        Console.WriteLine("Please give me a positive number.");
+                        Console.WriteLine(" Please give me a positive number.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("It's hard to find the legs on " + pigS + " of a pig.");
+                    Console.WriteLine(" It's hard to find the legs on " + pigS + " of a pig.");
                 }
             }
 
@@ -323,7 +326,183 @@ class Challenges
             Console.WriteLine(" In total, there are " + animals(chick, cow, pig) + " legs.");
 
         }
+        else if (response == "MonthName")
+        {
+            Console.WriteLine(" Today we are going to use the calendar called 'MonthName' \n First, please give me a number from 1 to 12.");
+            int monthInt = 1;
+            
+            bool valid1 = false;
+            while (!valid1)
+            {
+                var chickS = Console.ReadLine();
+                if (int.TryParse(chickS, out _))
+                {
+                    int chickT = int.Parse(chickS);
+                    if (chickT > 0 && chickT <= 12)
+                    {
+                        valid1 = true;
+                        monthInt = chickT;
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Please give me a number from 1 to 12.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a number from 1 to 12.");
+                }
+            }
+            Console.WriteLine(" Challenge 1 MonthName(" + monthInt + ") is: " + MonthName(monthInt) );
 
+        }
+        else if (response == "FindMinMax")
+        {
+            Console.WriteLine(" Today we are going to use the min and max finder called 'FindMinMax' \n First, please give me a number.");
+            var monthInt = new List<int>(); 
+            bool valid1 = false;
+            while (!valid1)
+            {
+                var chickS = Console.ReadLine();
+                if (int.TryParse(chickS, out _))
+                {
+                    int chickT = int.Parse(chickS);
+
+                    valid1 = true;
+                    monthInt.Add(chickT);
+
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a number.");
+                }
+            }
+            bool done = false;
+            while (!done)
+            {
+                Console.WriteLine(" Please give me another number, or type 'end' to finish.");
+                var chickS = Console.ReadLine();
+                if (chickS == "end")
+                {
+                    done = true;
+                }
+                else
+                {
+                    if (int.TryParse(chickS, out _))
+                    {
+                        int chickT = int.Parse(chickS);
+
+                        valid1 = true;
+                        monthInt.Add(chickT);
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Please give me a number.");
+                    }
+                }
+                
+            }
+            Console.WriteLine(" FindMinMax(" + arrayString(monthInt.ToArray()) + ") -> " + arrayString(FindMinMax(monthInt.ToArray())));
+
+
+        }
+        else if (response == "getAbsSum")
+        {
+            Console.WriteLine(" Today we are going to use the absolute value counter called 'getAbsSum' \n First, please give me a number.");
+            var monthInt = new List<int>();
+
+            bool valid1 = false;
+            while (!valid1)
+            {
+                var chickS = Console.ReadLine();
+                if (int.TryParse(chickS, out _))
+                {
+                    int chickT = int.Parse(chickS);
+
+                    valid1 = true;
+                    monthInt.Add(chickT);
+
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a number.");
+                }
+            }
+            bool done = false;
+            while (!done)
+            {
+                Console.WriteLine(" Please give me another number, or type 'end' to finish.");
+                var chickS = Console.ReadLine();
+                if (chickS == "end")
+                {
+                    done = true;
+                }
+                else
+                {
+                    if (int.TryParse(chickS, out _))
+                    {
+                        int chickT = int.Parse(chickS);
+
+                        valid1 = true;
+                        monthInt.Add(chickT);
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Please give me a number.");
+                    }
+                }
+
+            }
+            Console.WriteLine(" GetAbsSum(" + arrayString(monthInt.ToArray()) + ") -> " + getAbsSum(monthInt.ToArray()));
+        }
+        else if (response == "CalculateExponent")
+        {
+            Console.WriteLine(" Today we are going to use the exponent calculator called 'CalculateExponent' \n First, please give me the base.");
+            float baseInt = 1;
+            float expInt = 1;
+            bool valid1 = false;
+            while (!valid1)
+            {
+                var chickS = Console.ReadLine();
+                if (float.TryParse(chickS, out _))
+                {
+                    float chickT = float.Parse(chickS);
+                    
+                    valid1 = true;
+                    baseInt = chickT;
+                    
+                    
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a number.");
+                }
+            }
+            Console.WriteLine(" Now, please give me the power");
+            bool valid2 = false;
+            while (!valid2)
+            {
+                var chickS = Console.ReadLine();
+                if (float.TryParse(chickS, out _))
+                {
+                    float chickT = float.Parse(chickS);
+
+                    valid2 = true;
+                    expInt = chickT;
+
+
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a number.");
+                }
+            }
+            //Console.WriteLine(" CalculateExponent(" + baseInt + ", " + expInt + ") -> " + CalculateExponent(baseInt, expInt));
+            Console.WriteLine($"CalculateExponent({baseInt}, {expInt}) -> {CalculateExponent(baseInt, expInt)}");
+
+        }
         else if (response == "End")
         {
             return;
@@ -331,7 +510,7 @@ class Challenges
         else
         {
             Console.WriteLine(" That is not a valid function.");
-
+            
         }
 
         Start();
@@ -464,5 +643,58 @@ class Challenges
     public static int animals(int chicks, int cows, int pigs)
     {
         return chicks * 2 + cows * 4 + pigs * 4;
+    }
+
+    public static string MonthName(int M)
+    {
+        return DateAndTime.MonthName(M);
+    }
+
+    public static int[] FindMinMax(int[] input)
+    { 
+        var returnList = new List<int>();
+        returnList.Add(input.Min());
+        returnList.Add(input.Max());
+        
+        return returnList.ToArray();
+        
+    }
+
+    public static string arrayString(int[] input)
+    {
+        string thing = "";
+        bool first = true;
+        foreach (int i in input)
+        {
+            if (first)
+            {
+                first = false;
+            }
+            else
+            {
+                thing = thing + ", ";
+            }
+            thing = thing + i.ToString();
+
+        }
+        return thing;
+    }
+
+    public static int getAbsSum(int[] input)
+    {
+        int re = 0;
+        foreach(int i in input)
+        {
+            re += Math.Abs(i);
+            
+                
+        }
+        return re;
+    }
+
+    public static float CalculateExponent(float baseH, float exp)
+    {
+        return MathF.Pow(baseH, exp);
+        
     }
 }
