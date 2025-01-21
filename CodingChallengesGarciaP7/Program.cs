@@ -22,7 +22,7 @@ class Challenges
         {
             Console.WriteLine(" Sum\n Convert\n PlusOne\n CircuitPower\n CalcAge\n triArea\n negativity\n lessThan100\n something\n Reverse" +
                 "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals \n MonthName \n FindMinMax" +
-                "\n getAbsSum \n CalculateExponent");
+                "\n getAbsSum \n CalculateExponent \n MultiplyByLength \n HammingDistance");
             Start();
         }
         else if (response == "Sum")
@@ -503,6 +503,81 @@ class Challenges
             Console.WriteLine($"CalculateExponent({baseInt}, {expInt}) -> {CalculateExponent(baseInt, expInt)}");
 
         }
+        else if(response == "MultiplyByLength")
+        {
+            Console.WriteLine(" Today we are going to use the multi multiplication calculator called 'MultiplyByLength' \n First, please give me a whole number.");
+            var monthInt = new List<int>();
+
+            bool valid1 = false;
+            while (!valid1)
+            {
+                var chickS = Console.ReadLine();
+                if (int.TryParse(chickS, out _))
+                {
+                    int chickT = int.Parse(chickS);
+
+                    valid1 = true;
+                    monthInt.Add(chickT);
+
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a whole number.");
+                }
+            }
+            bool done = false;
+            while (!done)
+            {
+                Console.WriteLine(" Please give me another whole number, or type 'end' to finish.");
+                var chickS = Console.ReadLine();
+                if (chickS == "end")
+                {
+                    done = true;
+                }
+                else
+                {
+                    if (int.TryParse(chickS, out _))
+                    {
+                        int chickT = int.Parse(chickS);
+
+                        valid1 = true;
+                        monthInt.Add(chickT);
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Please give me a whole number.");
+                    }
+                }
+
+            }
+            Console.WriteLine(" MultiplyByLength(" + arrayString(monthInt.ToArray()) + ") -> " + arrayString(MultiplyByLength(monthInt.ToArray())));
+        }
+        else if (response == "HammingDistance")
+        {
+            Console.WriteLine(" Today we are going to use the hamming distance calculator called 'HammingDistance' \n First, please say something.");
+            string first = Console.ReadLine();
+            string second = "";
+            Console.WriteLine(" Now, please say something with the same number of characters.");
+            bool valid2 = false;
+            while (!valid2)
+            {
+                string chickS = Console.ReadLine();
+                if (chickS.Length == first.Length)
+                {
+                    second = chickS;
+                    valid2 = true;
+
+
+                }
+                else
+                {
+                    Console.WriteLine(" Please say something with the same number of characters.");
+                }
+            }
+            Console.WriteLine($"HammingDistance({first}, {second}) -> {HammingDistance(first, second)}");
+            
+        }
         else if (response == "End")
         {
             return;
@@ -696,5 +771,30 @@ class Challenges
     {
         return MathF.Pow(baseH, exp);
         
+    }
+
+    public static int[] MultiplyByLength(int[] input)
+    {
+        var returnList = new List<int>();
+        foreach (int i in input)
+        {
+            returnList.Add(i * input.Length);
+        }
+        return returnList.ToArray();
+    }
+
+    public static int HammingDistance(string f, string s)
+    {
+        char[] fchar = f.ToCharArray();
+        char[] schar = s.ToCharArray();
+        int dist = 0;
+        for (int i = 0; i < fchar.Length; i++)
+        {
+            if (fchar[i] != schar[i])
+            {
+                dist++;
+            }
+        }
+        return dist;
     }
 }
