@@ -22,7 +22,7 @@ class Challenges
         {
             Console.WriteLine(" Sum\n Convert\n PlusOne\n CircuitPower\n CalcAge\n triArea\n negativity\n lessThan100\n something\n Reverse" +
                 "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals \n MonthName \n FindMinMax" +
-                "\n getAbsSum \n CalculateExponent \n MultiplyByLength \n HammingDistance");
+                "\n getAbsSum \n CalculateExponent \n MultiplyByLength \n HammingDistance \n NameShuffle");
             Start();
         }
         else if (response == "Sum")
@@ -578,6 +578,13 @@ class Challenges
             Console.WriteLine($"HammingDistance({first}, {second}) -> {HammingDistance(first, second)}");
             
         }
+        else if (response == "NameShuffle")
+        {
+            Console.WriteLine(" Today we are going to use the name shuffler called 'NameShuffle' \n First, please give me your first and last name seperated by a space.");
+            string input = Console.ReadLine();
+            Console.WriteLine($"NameShuffle({input}) -> {NameShuffle(input)}");
+
+        }
         else if (response == "End")
         {
             return;
@@ -796,5 +803,36 @@ class Challenges
             }
         }
         return dist;
+    }
+
+    public static string NameShuffle(string s)
+    {
+        char[] sChar = s.ToCharArray();
+        bool found = false;
+        int index = 0;
+        for (int i = 0; i < sChar.Length; i++)
+        {
+            if (!found)
+            {
+                if (char.IsWhiteSpace(s, i))
+                {
+                    index = i;
+                    found = true;
+                }
+            }
+        }
+        var firstList = new List<char>();
+        var lastList = new List<char>();
+        for (int i = 0; i < index; i++)
+        {
+            firstList.Add(sChar[i]);
+        }
+        for (int i = index++; i < sChar.Length; i++)
+        {
+            lastList.Add(sChar[i]);
+        }
+        string l = new string(lastList.ToArray());
+        string f = new string(firstList.ToArray());
+        return l + " " + f;
     }
 }
