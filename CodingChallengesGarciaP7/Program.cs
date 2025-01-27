@@ -22,7 +22,7 @@ class Challenges
         {
             Console.WriteLine(" Sum\n Convert\n PlusOne\n CircuitPower\n CalcAge\n triArea\n negativity\n lessThan100\n something\n Reverse" +
                 "\n howManySeconds\n SumPolygon\n Edabit\n And\n points\n FindPerimeter\n HelloName\n animals \n MonthName \n FindMinMax" +
-                "\n getAbsSum \n CalculateExponent \n MultiplyByLength \n HammingDistance \n NameShuffle");
+                "\n getAbsSum \n CalculateExponent \n MultiplyByLength \n HammingDistance \n NameShuffle \n smallerNum");
             Start();
         }
         else if (response == "Sum")
@@ -575,15 +575,65 @@ class Challenges
                     Console.WriteLine(" Please say something with the same number of characters.");
                 }
             }
-            Console.WriteLine($"HammingDistance({first}, {second}) -> {HammingDistance(first, second)}");
+            Console.WriteLine($" HammingDistance({first}, {second}) -> {HammingDistance(first, second)}");
             
         }
         else if (response == "NameShuffle")
         {
             Console.WriteLine(" Today we are going to use the name shuffler called 'NameShuffle' \n First, please give me your first and last name seperated by a space.");
             string input = Console.ReadLine();
-            Console.WriteLine($"NameShuffle({input}) -> {NameShuffle(input)}");
+            Console.WriteLine($" NameShuffle({input}) -> {NameShuffle(input)}");
 
+        }
+        else if (response == "smallerNum")
+        {
+            Console.WriteLine(" Today we are going to use the smaller number calculator called 'smallerNum' \n First, please give me a number.");
+            float first = 0;
+            float second = 0;
+            bool valid1 = false;
+            while (!valid1)
+            {
+                var chickS = Console.ReadLine();
+                if (float.TryParse(chickS, out _))
+                {
+                    float chickT = float.Parse(chickS);
+
+                    valid1 = true;
+                    first = chickT;
+
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a number.");
+                }
+            }
+            Console.WriteLine(" Please give me the second number.");
+            bool valid2 = false;
+            while (!valid2)
+            {
+                var chickS = Console.ReadLine();
+                if (float.TryParse(chickS, out _))
+                {
+                    float chickT = float.Parse(chickS);
+
+                    valid2 = true;
+                    second = chickT;
+
+                }
+                else
+                {
+                    Console.WriteLine(" Please give me a number.");
+                }
+            }
+            if (first != second)
+            {
+                Console.WriteLine($" smallerNum({first}, {second}) -> {smallerNum(first, second)}");
+
+            }
+            else
+            {
+                Console.WriteLine(" The numbers are equal");
+            }
         }
         else if (response == "End")
         {
@@ -834,5 +884,21 @@ class Challenges
         string l = new string(lastList.ToArray());
         string f = new string(firstList.ToArray());
         return l + " " + f;
+    }
+
+    public static float smallerNum(float f, float s)
+    {
+        if (f > s)
+        {
+            return s;
+        }
+        else if (s > f)
+        {
+            return f;
+        }
+        else
+        {
+            throw new InvalidOperationException("Numbers are equal.");
+        }
     }
 }
